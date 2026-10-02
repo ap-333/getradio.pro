@@ -11,8 +11,8 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Get Radio Pro builds modern infotainment into everyday cars - factory-clean installs,
-            wireless CarPlay and Android Auto, and audio that finally matches the drive.
+            Get Radio Pro activates premium in-car satellite radio for everyday drivers — instant
+            activation, easy renewals, and 150+ channels with your factory radio. No new hardware.
           </p>
           <div className="mt-7 flex gap-3">
             {[Instagram, Facebook, Youtube].map((Icon, i) => (

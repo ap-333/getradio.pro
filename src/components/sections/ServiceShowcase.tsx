@@ -35,7 +35,7 @@ export function ServiceShowcase({ service, flip }: { service: Service; flip: boo
           ))}
         </ul>
         <ButtonLink to="/contact" variant="outline" className="mt-9">
-          Request This Upgrade <ArrowUpRight className="h-4 w-4" />
+          Activate This Plan <ArrowUpRight className="h-4 w-4" />
         </ButtonLink>
       </Reveal>
     </article>

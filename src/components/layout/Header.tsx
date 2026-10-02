@@ -53,7 +53,7 @@ export function Header() {
             </Link>
           ))}
           <ButtonLink to="/contact" className="px-6 py-3">
-            Get Started
+            Activate Now
           </ButtonLink>
         </nav>
 
@@ -88,7 +88,7 @@ export function Header() {
             </Link>
           ))}
           <ButtonLink to="/contact" className="mt-6 w-full">
-            Get Started
+            Activate Now
           </ButtonLink>
         </nav>
       </div>

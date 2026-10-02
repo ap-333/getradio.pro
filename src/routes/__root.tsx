@@ -70,17 +70,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
-      { title: "Get Radio Pro - Car Radio & Infotainment Upgrades" },
+      { title: "Get Radio Pro - In-Car Satellite Radio Subscriptions" },
       {
         name: "description",
         content:
-          "Modern car radio, touchscreen, CarPlay and audio upgrades installed to factory standard.",
+          "Premium satellite radio subscriptions for vehicle owners. Instant activation, renewals & full-channel access with your factory radio.",
       },
       { property: "og:title", content: "Get Radio Pro" },
       {
         property: "og:description",
         content:
-          "Modern car radio, touchscreen, CarPlay and audio upgrades installed to factory standard.",
+          "Activate premium satellite radio in your car in minutes. 150+ channels, no new hardware, live support.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

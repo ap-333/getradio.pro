@@ -3,6 +3,7 @@ import { PageHero } from "@/components/sections/Hero";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
 import { Reveal } from "@/components/Reveal";
+import { ButtonLink } from "@/components/ActionButton";
 import workshop from "@/assets/workshop.jpg";
 import install from "@/assets/install.jpg";
 import audio from "@/assets/audio.jpg";
@@ -11,16 +12,17 @@ import carplay from "@/assets/carplay.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Get Radio Pro - Car Audio & Infotainment Specialists" },
+      { title: "About Get Radio Pro - In-Car Subscription Specialists" },
       {
         name: "description",
         content:
-          "Our story, our standards and why installation quality matters more than the box on the shelf. Meet the Get Radio Pro workshop.",
+          "We help vehicle owners activate and keep premium satellite radio. No hardware, no hassle — just every channel, live support and fast activation.",
       },
       { property: "og:title", content: "About Get Radio Pro" },
       {
         property: "og:description",
-        content: "A technology-first car audio workshop obsessed with factory-clean installation.",
+        content:
+          "Subscription-first specialists for in-car satellite radio. Activation, renewal and support.",
       },
     ],
   }),
@@ -28,30 +30,30 @@ export const Route = createFileRoute("/about")({
 });
 
 const STATS = [
-  ["12", "Years in the bay"],
-  ["6,400+", "Vehicles upgraded"],
-  ["48", "Supported vehicle brands"],
-  ["4.9", "Average owner rating"],
+  ["12", "Years serving drivers"],
+  ["48k+", "Radios activated"],
+  ["48", "Vehicle brands supported"],
+  ["4.9", "Average driver rating"],
 ];
 
 const PRINCIPLES = [
   {
-    title: "Quality installation is the product",
-    body: "A great head unit fitted badly is a worse car. Every loom is soldered and heat-shrunk, every panel comes off with trim tools, and every job ends with a full function test - reverse trigger, chimes, wheel controls, the lot.",
+    title: "Your factory radio is enough",
+    body: "If your dash already has a satellite button or a radio ID on Channel 0, you don't need new equipment. We activate what the manufacturer built in — clean, instant, and reversible.",
     image: install,
-    alt: "Technician carefully fitting a touchscreen head unit into a dashboard",
+    alt: "Car dashboard with factory satellite radio active",
   },
   {
-    title: "Technology chosen, not sold",
-    body: "We keep a short list of hardware we genuinely trust and spec from it. If your car only needs a Bluetooth module and better door speakers, that's what we'll quote - the upsell isn't the business model.",
+    title: "Subscriptions, handled for you",
+    body: "Radio IDs, signal refreshes, renewals, transfers between vehicles — the paperwork nobody wants to do. That's our entire job, and we do it live with you on the line.",
     image: carplay,
-    alt: "Touchscreen showing a connected phone projection interface",
+    alt: "Driver enjoying activated satellite channels",
   },
   {
-    title: "Tuned for the cabin it lives in",
-    body: "Glass angles, seat foam and door skins all change what you hear. Every audio build finishes with measurement and DSP time alignment so the stage sits where the windscreen is, not behind your knees.",
+    title: "Support that answers",
+    body: "Missing channels, no signal, new used car with a locked radio? Real specialists who know vehicle radios walk you through it in minutes, not days of hold music.",
     image: audio,
-    alt: "Component speaker installed in a luxury car door panel",
+    alt: "Premium in-car listening experience",
   },
 ];
 
@@ -62,14 +64,14 @@ function About() {
         eyebrow="Our Story"
         title={
           <>
-            Obsessed with
+            Radio lovers,
             <br />
-            the <span className="text-primary">details.</span>
+            for <span className="text-primary">drivers.</span>
           </>
         }
-        lead="Get Radio Pro started in a two-bay garage with one rule: an upgrade should feel like the car left the factory that way."
+        lead="Get Radio Pro started with one frustration: great cars with dead satellite buttons. We built a concierge to switch them on and keep them on."
         image={workshop}
-        alt="Professional car audio workshop at night with a dark sedan under focused lighting"
+        alt="Get Radio Pro specialists helping drivers activate car radio"
         overlay="side"
       />
 
@@ -78,27 +80,31 @@ function About() {
           <Reveal>
             <p className="eyebrow">Est. 2014</p>
             <h2 className="display mt-6 text-4xl sm:text-5xl">
-              We fix the gap between
+              We close the gap between
               <br />
-              your car and your phone.
+              your car and every channel.
             </h2>
+            <div className="mt-8">
+              <ButtonLink to="/contact" variant="outline">
+                Activate My Vehicle
+              </ButtonLink>
+            </div>
           </Reveal>
           <Reveal delay={120} className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              The average car on the road is over twelve years old. It was engineered before
-              wireless projection, before high-resolution reverse cameras, before anyone expected a
-              dashboard to sync with a phone the moment you sat down.
+              Millions of cars, trucks and SUVs left the factory with a satellite tuner inside. Most
+              second owners never activate it — they see “Check Tuner” or “No Signal” and assume
+              they need new hardware.
             </p>
             <p>
-              We spent a decade learning how to close that gap without damaging what the
-              manufacturer got right - the ergonomics, the trim fit, the way the steering controls
-              fall under your thumb. Every build starts with the vehicle's own wiring diagram, not a
-              universal harness.
+              You usually don’t. Tune to Channel 0, read the radio ID, and that’s the key to 150+
+              channels of ad-free music, live play-by-play, breaking news, comedy and talk. We link
+              that ID to a premium vehicle subscription and send the activation signal while you’re
+              still parked.
             </p>
             <p>
-              Today the workshop runs four bays and a dedicated fabrication bench, and the rule
-              hasn't changed. If the install can be spotted from the driver's seat, it isn't
-              finished.
+              Today we support activations, renewals, used-car reactivations and multi-vehicle
+              households nationwide — with live help when your display doesn’t cooperate.
             </p>
           </Reveal>
         </div>
@@ -106,7 +112,7 @@ function About() {
         <ul className="mt-20 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map(([n, l], i) => (
             <Reveal as="li" key={l} delay={i * 90} className="bg-background">
-              <div className="p-8 lg:p-10">
+              <div className="premium-card p-8 hover:bg-surface lg:p-10">
                 <p className="display text-5xl text-primary lg:text-6xl">{n}</p>
                 <p className="mt-3 text-xs uppercase tracking-[0.24em] text-muted-foreground">
                   {l}
@@ -123,9 +129,9 @@ function About() {
             eyebrow="How we work"
             title={
               <>
-                Three standards we
+                Three promises for
                 <br />
-                <span className="text-primary">refuse to bend.</span>
+                <span className="text-primary">every driver.</span>
               </>
             }
           />
@@ -135,15 +141,16 @@ function About() {
                 <Reveal
                   className={`lg:col-span-7 ${i % 2 === 1 ? "lg:order-2 lg:col-start-6" : ""}`}
                 >
-                  <div className="group overflow-hidden">
+                  <div className="group relative overflow-hidden">
                     <img
                       src={p.image}
                       alt={p.alt}
                       loading="lazy"
                       width={1440}
                       height={1088}
-                      className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                      className="aspect-[16/10] w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
                     />
+                    <div className="pointer-events-none absolute inset-0 border border-border" />
                   </div>
                 </Reveal>
                 <Reveal delay={120} className={`lg:col-span-5 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
@@ -160,8 +167,9 @@ function About() {
       </section>
 
       <CTASection
-        title="Let's Build Yours Next."
-        lead="Tell us the vehicle and how you drive it. We'll come back with a spec, a price and a date."
+        title="Let's Switch Yours On."
+        lead="Send your make, model, year and radio ID — we'll confirm compatibility and activate you in minutes."
+        label="Activate Now"
       />
     </>
   );

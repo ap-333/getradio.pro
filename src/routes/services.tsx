@@ -9,17 +9,16 @@ import carplay from "@/assets/carplay.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services - Car Radio, CarPlay & Audio Upgrades | Get Radio Pro" },
+      { title: "Plans & Services - In-Car Satellite Subscriptions | Get Radio Pro" },
       {
         name: "description",
         content:
-          "Radio upgrades, touchscreen systems, Apple CarPlay, Android Auto, backup cameras, steering wheel controls and professional installation.",
+          "New activations, renewals, transfers, family bundles and signal support for in-car satellite radio. No new hardware.",
       },
-      { property: "og:title", content: "Get Radio Pro Services" },
+      { property: "og:title", content: "Get Radio Pro Plans" },
       {
         property: "og:description",
-        content:
-          "Eight upgrade paths for a modern, connected cabin - installed to factory standard.",
+        content: "Eight subscription paths for your factory car radio — activated in minutes.",
       },
     ],
   }),
@@ -30,27 +29,27 @@ function Services() {
   return (
     <>
       <PageHero
-        eyebrow="What We Do"
+        eyebrow="Plans & Services"
         title={
           <>
-            Everything behind
+            One radio.
             <br />
-            the <span className="text-primary">dashboard.</span>
+            <span className="text-primary">Every possibility.</span>
           </>
         }
-        lead="Eight upgrade paths, one standard of installation. Mix them into a single build or start with the one that bothers you most."
+        lead="Eight subscription paths for the radio you already own. Mix activation, renewal, transfer or support — all live in minutes, no shop visit."
         image={carplay}
-        alt="Modern car touchscreen running phone projection with maps and media"
+        alt="Car display with premium satellite channels active"
         overlay="side"
       />
 
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-[1400px] gap-px border-x border-border bg-border px-0 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Free", "Fitment consultation"],
-            ["1 Day", "Typical turnaround"],
-            ["2 Years", "Workmanship warranty"],
-            ["100%", "Factory controls retained"],
+            ["~10 min", "Typical activation"],
+            ["150+", "Channels unlocked"],
+            ["$0", "Hardware required"],
+            ["Live", "Human support"],
           ].map(([n, l], i) => (
             <Reveal key={l} delay={i * 80} className="bg-background">
               <div className="px-6 py-8 sm:px-8">
@@ -71,9 +70,9 @@ function Services() {
       </div>
 
       <CTASection
-        title="Not Sure Where To Start?"
-        lead="Send us your make, model and year. We'll tell you exactly what fits and what it changes."
-        label="Request an Upgrade"
+        title="Not Sure What You Need?"
+        lead="Send your make, model, year and what your radio shows now. We'll tell you if it's new, expired, or ready for transfer."
+        label="Check My Radio"
       />
     </>
   );

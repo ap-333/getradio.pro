@@ -9,16 +9,16 @@ import install from "@/assets/install.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Get Radio Pro - Request a Car Audio Upgrade" },
+      { title: "Activate Now - Get Radio Pro Satellite Subscriptions" },
       {
         name: "description",
         content:
-          "Tell us your vehicle make, model and year and we'll spec the right radio, touchscreen or audio upgrade. Free fitment consultation.",
+          "Activate or renew premium satellite radio for your vehicle. Send make, model, year and radio ID for fastest activation.",
       },
-      { property: "og:title", content: "Let's Upgrade Your Drive - Get Radio Pro" },
+      { property: "og:title", content: "Activate Your Car Radio - Get Radio Pro" },
       {
         property: "og:description",
-        content: "Book a free fitment consultation with the Get Radio Pro workshop.",
+        content: "New activations, renewals and transfers in minutes. No new hardware.",
       },
     ],
   }),
@@ -29,17 +29,17 @@ function Contact() {
   return (
     <>
       <PageHero
-        eyebrow="Get In Touch"
+        eyebrow="Activate in Minutes"
         title={
           <>
-            Let's Upgrade
+            Switch On
             <br />
-            Your <span className="text-primary">Drive.</span>
+            Your <span className="text-primary">Radio.</span>
           </>
         }
-        lead="Send your vehicle details and we'll confirm what fits, what it costs and when we can book you in."
+        lead="Send your vehicle + radio ID and we'll link a premium subscription and send your activation signal. Most cars are live the same day."
         image={install}
-        alt="Technician installing a modern touchscreen car stereo"
+        alt="Car dashboard ready for satellite radio activation"
         overlay="side"
       />
 
@@ -51,12 +51,18 @@ function Contact() {
 
           <Reveal delay={140} className="space-y-10">
             <div>
-              <p className="eyebrow">Workshop</p>
-              <h2 className="display mt-4 text-3xl sm:text-4xl">Come see the bay.</h2>
+              <p className="eyebrow">Prefer to call?</p>
+              <h2 className="display mt-4 text-3xl sm:text-4xl">Faster by phone.</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Walk-ins welcome for fitment checks - we'll take a look at your dash and tell you
-                straight away what's possible.
+                Sit in your vehicle, tune to Ch. 0 to see your radio ID, then call. We activate live
+                while you stay parked with a clear view of the sky.
               </p>
+              <a
+                href={`tel:${CONTACT.phoneRaw}`}
+                className="display mt-6 inline-block bg-primary px-6 py-4 text-2xl text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[var(--shadow-glow)]"
+              >
+                {CONTACT.phone}
+              </a>
             </div>
 
             <ul className="space-y-px overflow-hidden border border-border bg-border">
@@ -73,7 +79,7 @@ function Contact() {
                   value: CONTACT.email,
                   href: `mailto:${CONTACT.email}`,
                 },
-                { icon: MapPin, label: "Address", value: `${CONTACT.address}, ${CONTACT.city}` },
+                { icon: MapPin, label: "Base", value: `${CONTACT.address}, ${CONTACT.city}` },
               ].map((item) => (
                 <li key={item.label} className="bg-background">
                   <div className="flex gap-4 p-6">
@@ -98,11 +104,11 @@ function Contact() {
               ))}
             </ul>
 
-            <div className="border border-border p-6">
+            <div className="glass-plate p-6">
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-primary" />
                 <p className="font-display text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                  Opening hours
+                  Support hours
                 </p>
               </div>
               <ul className="mt-5 space-y-3 text-sm">
@@ -116,6 +122,10 @@ function Contact() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-5 border-t border-border/60 pt-4 text-xs leading-relaxed text-muted-foreground">
+                Tip: For fastest help, include your radio ID (Ch. 0) and what your display shows now
+                — “Preview”, “No Signal” or “Check Tuner”.
+              </p>
             </div>
           </Reveal>
         </div>

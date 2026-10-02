@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Phone } from "lucide-react";
+import { Phone, Radio } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +17,8 @@ export function PhoneCallDialog() {
     if (hasSeenDialog) {
       setOpen(false);
     } else {
-      setOpen(true);
+      const t = setTimeout(() => setOpen(true), 1200);
+      return () => clearTimeout(t);
     }
   }, []);
 
@@ -33,19 +34,28 @@ export function PhoneCallDialog() {
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="border-primary/20 bg-background/95 backdrop-blur-2xl sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Phone className="h-5 w-5" />
-            Call Now
+            <span className="flex h-9 w-9 items-center justify-center bg-primary text-primary-foreground">
+              <Radio className="h-5 w-5" />
+            </span>
+            Activate Your Car Radio
           </DialogTitle>
-          <DialogDescription>Ready to upgrade your drive? Give us a call today!</DialogDescription>
+          <DialogDescription>
+            Premium in-car satellite subscription — activated in minutes with your factory radio.
+          </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
-          <div className="rounded-lg bg-surface/50 p-6 text-center">
-            <p className="text-sm text-muted-foreground mb-3">Our phone number</p>
-            <p className="font-display text-2xl sm:text-3xl font-semibold text-primary">
+          <div className="border border-border bg-surface/50 p-6 text-center">
+            <p className="mb-2 text-xs uppercase tracking-[0.24em] text-muted-foreground">
+              Call a specialist now
+            </p>
+            <p className="font-display text-2xl font-semibold text-primary sm:text-3xl">
               {CONTACT.phone}
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">
+              New activations · Renewals · Transfers
             </p>
           </div>
           <div className="space-y-3">
@@ -54,7 +64,7 @@ export function PhoneCallDialog() {
               className="inline-flex w-full items-center justify-center gap-2 font-display uppercase tracking-[0.16em] text-sm font-semibold px-7 py-4 rounded-xs transition-all duration-300 bg-primary text-primary-foreground hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)]"
             >
               <Phone className="h-4 w-4" />
-              Call Now
+              Call to Activate
             </button>
           </div>
           <div className="text-center text-xs text-muted-foreground">
