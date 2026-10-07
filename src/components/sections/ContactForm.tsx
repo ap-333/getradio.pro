@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ActionButton";
+import { reportSaleConversion } from "@/lib/gtag";
 import { SERVICES } from "@/data/services";
 
 const field =
@@ -12,6 +13,7 @@ export function ContactForm() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    reportSaleConversion();
     setSent(true);
   }
 
